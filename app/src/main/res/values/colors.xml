@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Premium Dark Palette -->
+    <color name="primary">#E2B33C</color> <!-- Gold/Mustard -->
+    <color name="primary_dark">#B38B2D</color>
+    <color name="primary_light">#F5D68D</color>
+
+    <color name="secondary">#2C2C2C</color> <!-- Deep Charcoal -->
+    <color name="secondary_variant">#1A1A1A</color>
+
+    <!-- UI Colors Light (Soft Platinum) -->
+    <color name="bg_light">#F8F9FA</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="text_primary_light">#1A1A1A</color>
+    <color name="text_secondary_light">#757575</color>
+
+    <!-- UI Colors Dark (Onyx) -->
+    <color name="bg_dark">#0F0F0F</color>
+    <color name="surface_dark">#181818</color>
+    <color name="text_primary_dark">#F2F2F2</color>
+    <color name="text_secondary_dark">#9E9E9E</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_blue">#3498DB</color>
+    <color name="accent_emerald">#2ECC71</color>
+    <color name="accent_ruby">#E74C3C</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="glass_white">#4DFFFFFF</color>
+    <color name="glass_black">#4D000000</color>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Web Porta</string>
+    <string-array name="device_types">
+        <item>3D Printer</item>
+        <item>ESP32</item>
+        <item>IoT Device</item>
+        <item>Other</item>
+    </string-array>
+</resources>
