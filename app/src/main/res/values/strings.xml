@@ -1,9 +1,23 @@
 <resources>
     <string name="app_name">Web Porta</string>
-    <string-array name="device_types">
-        <item>3D Printer</item>
-        <item>ESP32</item>
-        <item>IoT Device</item>
-        <item>Other</item>
-    </string-array>
+    <string name="nav_home">Ana Sayfa</string>
+    <string name="nav_discover">Keşfet</string>
+    <string name="nav_settings">Ayarlar</string>
+    <string name="search_hint">Sistemlerinde ara...</string>
+    <string name="discover_hint">Ağdaki cihazları tara</string>
+    <string name="total_devices">Toplam Cihaz</string>
+    <string name="online_devices">Aktif</string>
+    <string name="empty_devices">Cihaz Bulunamadı</string>
+    <string name="add_new_device">Yeni Cihaz</string>
+    <string name="btn_save">Kaydet</string>
+    <string name="btn_cancel">İptal</string>
+    <string name="device_details">Cihaz Detayları</string>
+    <string name="device_name">Cihaz Adı</string>
+    <string name="ip_url">IP veya URL</string>
+    <string name="device_type">Cihaz Tipi</string>
+    <string name="theme_color">Tema Rengi</string>
+    <string name="security_notice">Güvenlik Bildirimi</string>
+    <string name="security_msg">Web Porta, cihazlarınıza erişim sağlayan bir köprüdür. Veri güvenliğiniz için cihazlarınızın şifreleme protokollerini kontrol etmeyi unutmayın.</string>
+    <string name="btn_got_it">Anladım</string>
+    <string name="btn_exit">Çıkış</string>
 </resources>

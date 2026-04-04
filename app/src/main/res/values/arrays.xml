@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="device_types">
+        <item>Bilinmiyor</item>
+        <item>3D Yazıcı</item>
+        <item>Sunucu</item>
+        <item>ESP32</item>
+        <item>IoT Cihazı</item>
+        <item>Modem/Router</item>
+        <item>Kamera</item>
+    </string-array>
+</resources>

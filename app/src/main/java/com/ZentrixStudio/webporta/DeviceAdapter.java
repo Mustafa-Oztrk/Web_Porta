@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,16 +50,28 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder
         
         holder.imgPin.setVisibility(device.isPinned() ? View.VISIBLE : View.GONE);
 
+        // Status Dot Logic
+        if (device.isOnline()) {
+            holder.viewStatusDot.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50"))); // Green
+            startPulseAnimation(holder.viewStatusDot);
+        } else {
+            holder.viewStatusDot.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FF5252"))); // Red
+            holder.viewStatusDot.clearAnimation();
+        }
+
         int color = device.getColor();
         if (color == 0) color = ContextCompat.getColor(context, R.color.primary);
 
         int iconRes;
-        if (device.getType().contains("3D Printer")) {
+        String type = device.getType();
+        if (type.contains("3D Printer")) {
             iconRes = android.R.drawable.ic_menu_preferences;
-        } else if (device.getType().contains("ESP32")) {
+        } else if (type.contains("ESP32")) {
             iconRes = android.R.drawable.ic_menu_day;
-        } else if (device.getType().contains("IoT")) {
+        } else if (type.contains("IoT")) {
             iconRes = android.R.drawable.ic_lock_idle_low_battery;
+        } else if (type.contains("Server") || type.contains("Sunucu")) {
+            iconRes = android.R.drawable.ic_menu_manage;
         } else {
             iconRes = android.R.drawable.ic_menu_info_details;
         }
@@ -73,6 +87,14 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder
         });
     }
 
+    private void startPulseAnimation(View view) {
+        Animation anim = new AlphaAnimation(0.4f, 1.0f);
+        anim.setDuration(800);
+        anim.setRepeatMode(Animation.REVERSE);
+        anim.setRepeatCount(Animation.INFINITE);
+        view.startAnimation(anim);
+    }
+
     @Override
     public int getItemCount() {
         return deviceList.size();
@@ -86,7 +108,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtName, txtIp;
         ImageView imgType, imgPin;
-        View iconContainer;
+        View iconContainer, viewStatusDot;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -95,6 +117,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder
             imgType = itemView.findViewById(R.id.imgDeviceType);
             iconContainer = itemView.findViewById(R.id.iconContainer);
             imgPin = itemView.findViewById(R.id.imgPin);
+            viewStatusDot = itemView.findViewById(R.id.viewStatusDot);
         }
     }
 }

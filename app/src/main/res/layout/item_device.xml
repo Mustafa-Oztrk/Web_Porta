@@ -16,6 +16,16 @@
         android:layout_height="wrap_content"
         android:padding="20dp">
 
+        <!-- Online Status Dot -->
+        <View
+            android:id="@+id/viewStatusDot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/circle_bg"
+            android:backgroundTint="#FF5252"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <ImageView
             android:id="@+id/imgPin"
             android:layout_width="18dp"

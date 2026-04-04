@@ -1,7 +1,6 @@
 package com.ZentrixStudio.webporta;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Device implements Serializable {
     private String id;
@@ -12,13 +11,16 @@ public class Device implements Serializable {
     private int color;
     private long lastAccessed;
     private String note;
+    
+    // UI state - not persisted
+    private transient boolean isOnline = false;
 
     public Device(String name, String ip, String type, int color) {
         this(name, ip, type, false, color);
     }
 
     public Device(String name, String ip, String type, boolean pinned, int color) {
-        this.id = String.valueOf(System.currentTimeMillis());
+        this.id = String.valueOf(System.currentTimeMillis() + name.hashCode());
         this.name = name;
         this.ip = ip;
         this.type = type;
@@ -48,6 +50,9 @@ public class Device implements Serializable {
 
     public long getLastAccessed() { return lastAccessed; }
     public void setLastAccessed(long lastAccessed) { this.lastAccessed = lastAccessed; }
+
+    public boolean isOnline() { return isOnline; }
+    public void setOnline(boolean online) { isOnline = online; }
 
     public String getNote() { return note; }
     public void setNote(String note) { this.note = note; }
